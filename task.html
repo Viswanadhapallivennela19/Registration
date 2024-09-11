@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form-Patterns</title>
+    <style>
+        form{
+            margin:auto;
+            border-color: green;
+            
+        }
+        fieldset{
+            margin: auto;
+            margin-top: 6rem;
+            width: 30%;
+            box-sizing: border-box;
+            background-color: white;
+             box-shadow: 2px 2px 5px 5px rgba(0, 0, 0, 0.195);
+             display: flex;
+            flex-direction: column;
+             border-radius: 20px;
+             border-color: green;
+             border-style:ridge;
+        }
+        input{
+            padding-left:10px;
+            padding-top:5px;
+            margin-top: 10px;
+            column-gap: 20px;
+            font-size: 1rem;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+        input:hover{
+            transition: all 0.9s;
+            padding-top:10px;
+            border:none;
+            border-radius:5px;
+            box-sizing: border-box;
+            box-shadow: 2px 2px 5px 5px rgba(0, 0, 0, 0.178);
+        }
+        button{
+             width:20%;
+             padding: 8px;
+             text-align:center;
+            margin: auto;
+            background-color: rgba(35, 131, 35, 0.849);
+            border-radius: 5px;
+        }
+        button:hover{
+           box-shadow: 2px 2px 5px 5px rgba(0, 0, 0, 0.226);
+        }
+        legend{
+            text-align: center;
+            font-size: 2.3rem;
+            color:rgb(4, 58, 4)
+        }
+        label{
+            font-weight: bold;
+        }
+
+         
+    </style>
+</head>
+<body>
+    <form action="login.html" method="">
+        <fieldset>
+            <legend>Sign Up Here</legend>
+            <label for="name">Full Name</label>
+            <input type="text" placeholder="Enter Your FullName" id="name" name="name" required autocomplete="on" pattern="[A-Za-z0-9]+" title="Please Enter Your Name without Spaces">
+            <label for="number">Phone Number</label>
+            <input type="tel" placeholder="Country Code-6309429042" id="number" name="number" required autocomplete="on" pattern="[+0-9]{3}[0-9]{10}" title="please enter your country code with Phone Number">
+            <label for="email">Email</label>
+            <input type="email" placeholder="Enter Your Email" id="email" name="email" pattern="[a-z0-9._%+-]+@[a-z]{5}\.[a-z]{3}" autocomplete="on" required title="please Enter Your Email In Correct Manner">
+            <label for="password" >Password</label>
+            <input type="password"   id="password" name="password" pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[@$%&_*+])+.{8,}" autocomplete="on" required title="Please Enter Strong Password">
+            <label for="confirm_password">Confirm Password</label>
+            <input type="password" id="confirm_password" name="confirm_password" pattern="(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[@$%&*_+]).{8,}" autocomplete="on" required>
+            <div>
+            <input type="checkbox"  value="Remember Me" id="checked" name="remember" required><label for="checked"  >Remember Me</label></div>
+            <button type="submit">SignUp</button>
+        </fieldset>
+    </form>
+</body>
+</html>
